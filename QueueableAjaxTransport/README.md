@@ -60,8 +60,7 @@ with a path as an argument, and then calling one of four methods: get, post,
 put, delete; with optional data associated with particular call. Returned
 Promise object then may be operated in a needed way on your code side.
 
-```
-javascript
+```javascript
 
 this.api('/article/'+id+'/comments', 'commenting-article-'+id).post({
     comment: this.refs.Comment.getText().trim(),
@@ -84,8 +83,7 @@ For mutually-exclusive calls (e.g. like/unlike, follow/unfollow) everything is
 as easy as:
 
 
-```
-javascript
+```javascript
 
 this.api('/article/'+id+'/rating', 'rating-article-'+id).post()
     .then((res) => {
