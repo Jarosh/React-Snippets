@@ -2,19 +2,41 @@ import React from 'react';
 import {AppTestWidget} from './AppTestWidget';
 
 
-export class AppSwArticle extends React.Component {
+export class AppTest extends React.Component {
 
+    
+    constructor(props, context) {
+        super(props, context);
 
-    componentDidMount() {
+        this.state = {
+            message_from_widget: 0
+        };
 
-        APP.notify('AppTestMounted');
+        this.handleTestWidgetTimer = (message) => {
+            this.setState({message_from_widget:message});
+        }
     }
 
-componentWillUnmount
+
+    componentWillMount() {
+        APP.attach('onAppTestWidgetTimer', this.handleTestWidgetTimer);
+    }
+
+
+    componentWillUnmount() {
+        APP.detach('onAppTestWidgetTimer', this.handleTestWidgetTimer);
+    }
+
+
     render() {
         return <div>
-            AppTest is on the screen...
+            <div>
+                AppTest is on the screen...
+            </div>
             <AppTestWidget/>
+            <div>
+                AppTestWidget is telling you: {this.state.message_from_widget}
+            </div>
         </div>
     }
 

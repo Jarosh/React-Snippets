@@ -5,9 +5,9 @@ doesn't have any built-in AJAX transport, I mean totally, absolutely... With
 React you're free to chose whether to use models from Backbone, send requests
 manually via jQuery's .ajax() method, utilize any other 3rd-party library, or go
 a little bit further and resort to more advanced and modern approach like
-Promises-driven Fetch API. One way or another, this writing is not as much about
-a specific library but about the concept that I believe should be one way or
-another implemented on the lowermost AJAX layer of your application.
+Promises-driven Fetch API. However, this writing is not as much about a specific
+library but about the concept that I believe should be one way or another
+implemented on the lowermost AJAX layer of your application.
 
 As for this particular snippet Fetch API is being used. That works good enough
 out of the box in most of modern browsers: Chrome, Firefox and Safari. Also it
