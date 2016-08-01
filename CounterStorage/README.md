@@ -12,10 +12,10 @@ This small component is a solution of described problem.
 - Think of unique names for your counters.
 - Display counters by putting Counter component's tag into `render()` methods
 of any of your components:
-> <Counter name={'article-commented-'+article.id} value={article.num_comments} />
+`<Counter name={'article-commented-'+article.id} value={article.num_comments} />`
 (`value` attribute stays for initial value of a counter);
 - When increment (decrement may be done by passing negative integer) of some
 particular counter is required, call static `add` method wherever needed:
-> Counter.add('article-commented-'+article.id, 1);
+`Counter.add('article-commented-'+article.id, 1);`
 each call to `add` will update values of needed <Counter> among those being
 currently rendered.
