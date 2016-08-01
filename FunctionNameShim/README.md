@@ -10,13 +10,15 @@ component equal to that component's name:
     }
 ```
 
-e.g. normally the code above will render DIV with a 'className' property (i.e.
-'class' HTML attribute) equal to 'comAppTest' when `render()` method was invoked
-from within component named AppTest, to 'comAppMain' when it was invoked from
-within AppMain component etc. respectively. However what's assumed to be
-'normally' is not always applicable to all the browsers, especially IE that
-doesn't have 'name' property of a Function out of the box. Surprisingly enough
-as for a moment of this writing none of more or less official polyfills/shims
-provide such support either.
+e.g. normally the code above will render DIV with a __className__ property (i.e.
+__class__ HTML attribute) equal to __*comAppTest*__ when `render()` method was
+invoked from within component named __AppTest__, to __*comAppMain*__ when it was
+invoked from within __AppMain__ component etc. respectively. However what's
+assumed to be 'normally' is not always applicable to all the browsers, especially
+IE that doesn't have 'name' property of a Function out of the box as a result
+`this.constructor.name` is undefined as well. Surprisingly enough as for a
+moment of this writing none of more or less official polyfills/shims provide
+such support either.
 
-So, one way or another, __If the hill will not come to Mahomet, Mahomet will go to the hill.__
+So, one way or another, *If the hill will not come to Mahomet, Mahomet will go
+to the hill.*
