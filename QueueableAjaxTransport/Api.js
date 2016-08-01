@@ -83,12 +83,16 @@ export class Api extends React.Component {
                 var exe = ()=>{
                     if (queue[key].length && !queue[key][0][0]) {
                         queue[key][0][0] = true;
-                        r = fetch('//'+APP.SERVER.api+'/'+queue[key][0][1], queue[key][0][2])
+                        r = fetch(/*'//'+API_HOST+*/'/'+queue[key][0][1], queue[key][0][2])
                             .then((res) => {
                                 if (res.status<200 || res.status>=300)
                                     throw Promise.resolve(res);
                                 return res.json();
                             })
+                            // this case is my project-specific and it is checking
+                            // for presence of Body key within the top of a JSON response;
+                            // you are free to replace it with any extra checkings here
+                            // or comment out this particular 'then' at all;
                             .then((res) => {
                                 queue[key].shift();
                                 exe();
